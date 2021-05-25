@@ -1,78 +1,132 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        new-site
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="home-page">
+    <Navbar />
+    <Header />
+    <FirstSection />
+    <SecondSection />
+    <ThirdSection />
+    <FourthSection />
+    <FifthSection />
+    <SixthSection />
+    <SeventhSection />
+    <Footer />
   </div>
 </template>
-
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      teste: null,
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
+  },
+  methods: {
+    onScroll(e) {
+      this.teste = window.top.scrollY;
+    },
+  },
+};
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
+<style scoped>
+.step-by-step,
+.services-desktop {
+  display: none;
 }
-*/
-.container {
+
+.teste-y {
+  position: absolute;
+  top: 100;
+  left: 100;
+}
+
+h3 {
+  font-size: 1.8rem !important;
+  color: #393838;
+  font-weight: 700;
+  width: 200px;
   margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  line-height: 60px;
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.place-services-mobile {
+  width: 100vw;
+  height: 450px;
+  background: var(--primary);
+}
+.images {
+  display: none;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.contact {
+  width: 90%;
 }
 
-.links {
-  padding-top: 15px;
+.contact a {
+  color: #0072c4;
+  font-weight: 600;
+}
+
+strong.primary {
+  color: #0072c4;
+}
+
+.button {
+  font-size: 1.5rem !important;
+  padding: 16px 40px !important;
+}
+
+.home-page {
+  overflow: hidden !important;
+  width: 100vw;
+}
+
+@media screen and (max-width: 540px) {
+  .home-page {
+    width: 100vw;
+  }
+
+  .footer {
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .services-desktop {
+    display: block;
+  }
+  .services-mobile {
+    display: none;
+  }
+}
+@media screen and (min-width: 830px) {
+  h3 {
+    font-size: 3rem !important;
+    color: #393838;
+    font-weight: 700;
+    width: 200px;
+    margin: 0 auto;
+    line-height: 60px;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .step-by-step-mobile {
+    display: none;
+  }
+
+  .step-by-step {
+    display: flex;
+  }
+
+  .place-services-mobile {
+    display: none;
+  }
 }
 </style>
