@@ -1,6 +1,5 @@
 <template>
   <div class="change-theme-button">
-    <pre>{{ theme }}</pre>
     <input
       v-model="theme"
       type="checkbox"
@@ -24,11 +23,9 @@ export default {
     };
   },
   beforeMount() {
-    if (
-      localStorage.getItem("themeDefault") !== undefined &&
-      localStorage.getItem("themeDefault") !== null
-    ) {
-      this.theme = localStorage.getItem("themeDefault");
+    this.theme = localStorage.getItem("themeDefault");
+
+    if (this.theme !== undefined && this.theme !== null) {
       this.$emit("changeTheme", this.theme);
     }
   },
