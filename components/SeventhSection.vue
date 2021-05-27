@@ -74,10 +74,10 @@ export default {};
 
 <style scoped>
 .sixth-section-container {
-  padding-top: 70px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 85%;
-  margin: 50px auto;
+  margin: 20px auto;
 }
 
 .sixth-section-container h2 {
@@ -105,6 +105,7 @@ export default {};
 
 .post {
   min-width: 300px;
+  max-width: 320px;
   background: var(--background);
   margin: 20px;
   border: 1px solid rgba(0, 0, 0, 0.5);

@@ -21,7 +21,7 @@ export default {
     },
     to: {
       type: String,
-      default: "/servicos",
+      default: "/#",
     },
     nav: {
       type: Boolean,
@@ -29,7 +29,7 @@ export default {
     },
     link: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
 };

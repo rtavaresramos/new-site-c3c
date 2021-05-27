@@ -1,7 +1,7 @@
 <template>
-  <div :class="`container ${theme ? 'dark' : 'light'}`">
-    <Nuxt />
+  <div :class="`container ${theme === true ? 'dark' : 'light'}`">
     <ChangeTheme @changeTheme="theme = $event" />
+    <Nuxt />
   </div>
 </template>
 

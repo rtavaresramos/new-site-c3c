@@ -147,8 +147,8 @@ export default {
 
 .first-section-main {
   display: flex;
+  flex-direction: column;
   width: 90%;
-  height: 400px;
   margin: 30px auto;
   background: var(--background);
   border-radius: 12px;
@@ -216,15 +216,11 @@ main {
 }
 
 main .main-content h2 {
-  position: absolute;
-  top: -28px;
-  left: 20px;
-  text-align: left;
+  text-align: center;
   font-weight: 500;
 }
 
 main .main-content {
-  position: relative;
   margin: 20px;
   padding: 10px;
   border-radius: 12px;
@@ -238,29 +234,22 @@ main .main-content h4 {
 
 main .main-bullets {
   display: flex;
-  margin-left: 30px;
+  flex-direction: column;
 }
 
 main .bullets {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
 }
 
 main .bullet-option {
   display: flex;
   align-items: center;
-  margin: 20px 10px;
+  margin: 10px;
 }
 main .bullet-option h3 {
   font-size: 1rem;
   text-align: left;
-}
-
-main .button {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
-  width: 40%;
+  margin-left: 10px;
 }
 </style>

@@ -13,8 +13,10 @@ export default {};
 
 <style scoped>
 .second-section-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 85%;
-  margin: 50px auto;
+  margin: 20px auto;
 }
 
 .second-section-container h2 {

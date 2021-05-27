@@ -42,8 +42,10 @@ export default {};
 </script>
 <style scoped>
 .third-section-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 85%;
-  margin: 50px auto;
+  margin: 20px auto;
 }
 
 .third-section-container h2 {
@@ -90,10 +92,12 @@ export default {};
   border-radius: 8px;
   overflow: hidden;
   min-width: 300px;
+  margin: 0 auto;
 }
 
 .solutions-results-context {
   width: 50%;
-  min-width: 300px;
+  min-width: 280px;
+  margin: 20px auto;
 }
 </style>

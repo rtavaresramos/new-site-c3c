@@ -2,7 +2,8 @@
   <div class="home-page">
     <Navbar />
     <Header />
-    <FirstSection />
+    <FirstSection class="desktop" />
+    <FirstSectionMobile class="mobile" />
     <SecondSection />
     <ThirdSection />
     <FourthSection />
@@ -85,21 +86,21 @@ strong.primary {
   width: 100vw;
 }
 
-@media screen and (max-width: 540px) {
-  .home-page {
-    width: 100vw;
+@media screen and (max-width: 829px) {
+  .desktop {
+    display: none;
   }
 
-  .footer {
-    margin-bottom: 100px;
+  .mobile {
+    display: block;
   }
 }
 
 @media screen and (min-width: 1110px) {
-  .services-desktop {
+  .desktop {
     display: block;
   }
-  .services-mobile {
+  .mobile {
     display: none;
   }
 }
@@ -112,20 +113,10 @@ strong.primary {
     margin: 0 auto;
     line-height: 60px;
   }
-
+  .desktop {
+    display: block;
+  }
   .mobile {
-    display: none;
-  }
-
-  .step-by-step-mobile {
-    display: none;
-  }
-
-  .step-by-step {
-    display: flex;
-  }
-
-  .place-services-mobile {
     display: none;
   }
 }

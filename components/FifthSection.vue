@@ -54,7 +54,7 @@ export default {};
 }
 
 .fifth-section-header {
-  flex: 0.6;
+  flex: 1;
   min-width: 300px;
 }
 .fifth-section-header h2 {

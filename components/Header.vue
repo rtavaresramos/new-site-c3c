@@ -81,7 +81,7 @@ strong {
 
 .image-container {
   flex: 1;
-  min-width: 300px;
+  min-width: 280px;
   width: 100%;
   z-index: 0;
 }
@@ -166,6 +166,11 @@ strong {
   .header img {
     width: 100%;
     margin-bottom: -55px;
+  }
+
+  .header {
+    margin-right: 0;
+    padding-left: 0;
   }
 }
 </style>

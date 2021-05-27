@@ -46,6 +46,7 @@ export default {};
 
 .all-companies {
   display: flex;
+  flex-wrap: wrap;
   margin: 40px auto;
   justify-content: space-between;
 }
@@ -53,6 +54,8 @@ export default {};
 .all-companies img {
   max-height: 80px;
   max-width: 200px;
+  min-width: 200px;
+  margin: 10px auto;
   filter: grayscale(1);
 }
 </style>
