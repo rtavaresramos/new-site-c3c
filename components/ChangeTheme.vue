@@ -19,13 +19,18 @@
 export default {
   data() {
     return {
-      theme: false,
+      theme: null,
     };
   },
-  beforeMount() {
-    this.theme = localStorage.getItem("themeDefault");
+  mounted() {
+    this.theme =
+      localStorage.getItem("themeDefault") === "false" ? false : true;
+    console.log("mounted", this.theme);
 
     if (this.theme !== undefined && this.theme !== null) {
+      this.$emit("changeTheme", this.theme);
+    } else {
+      this.theme = false;
       this.$emit("changeTheme", this.theme);
     }
   },
@@ -33,6 +38,7 @@ export default {
     changeTheme() {
       localStorage.setItem("themeDefault", this.theme);
       this.$emit("changeTheme", this.theme);
+      console.log("methods", this.theme);
     },
   },
 };
@@ -43,6 +49,7 @@ export default {
   position: fixed;
   bottom: 20px;
   right: 25px;
+  z-index: 9999;
 }
 .checkbox {
   opacity: 0;

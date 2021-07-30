@@ -62,7 +62,7 @@ nav {
   z-index: 20;
   display: flex;
   height: auto;
-  padding: 20px 40px;
+  padding: 20px 0;
   background: var(--background);
   justify-content: space-around;
   text-align: center;

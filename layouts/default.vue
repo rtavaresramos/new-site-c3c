@@ -1,6 +1,6 @@
 <template>
-  <div :class="`container ${theme === true ? 'dark' : 'light'}`">
-    <ChangeTheme @changeTheme="theme = $event" />
+  <div :class="`container ${theme}`">
+    <ChangeTheme @changeTheme="changeTheme" />
     <Nuxt />
   </div>
 </template>
@@ -21,8 +21,25 @@ export default {
   },
   data() {
     return {
-      theme: false,
+      theme: null,
     };
+  },
+  beforeMount() {
+    let theme = localStorage.getItem("themeDefault");
+    this.changeTheme(theme);
+  },
+  methods: {
+    changeTheme(evt) {
+      if (evt === "true" || evt === true) {
+        this.theme = "dark";
+        document.body.classList.add("dark");
+        document.body.classList.remove("light");
+      } else {
+        this.theme = "light";
+        document.body.classList.add("light");
+        document.body.classList.remove("dark");
+      }
+    },
   },
 };
 </script>
@@ -30,7 +47,7 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
 :root {
-  --light: #f8f8f8;
+  /* --light: #f8f8f8;
 
   --gray-light: rgba(0, 0, 0, 0.6);
   --gray-dark: rgba(0, 0, 0, 0.8);
@@ -49,7 +66,7 @@ export default {
   --svg-close: #e24444;
 
   --folder-primary: #2978ff;
-  --folder-secundary: #83aef9;
+  --folder-secundary: #83aef9; */
   --spacing: 0.4em;
   --mont: "Montserrat", sans-serif;
 }
@@ -102,6 +119,7 @@ export default {
 
 .container {
   background: var(--background-default);
+  margin: 0 auto;
 }
 
 h1,
@@ -141,6 +159,13 @@ body {
   width: 100%;
   font-size: 10px;
   overflow: hidden auto;
+}
+
+body.light {
+  background: #f3f6fa;
+}
+body.dark {
+  background: #1a1a1a;
 }
 
 a {

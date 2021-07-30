@@ -1,13 +1,8 @@
 <template>
   <div class="first-section-container">
-    <div class="first-section-header">
-      <h2>Somos a C3C</h2>
-      <h4>
-        Um time focado em facilitar as soluções da sua empresa . Desenvolvida
-        por especialistas no mercado salesforce, nossos C's constituem nossa
-        missão.
-      </h4>
-    </div>
+    <!-- <div class="first-section-header">
+      
+    </div> -->
     <div class="first-section-main">
       <aside>
         <div class="comand-circles">
@@ -32,6 +27,12 @@
         </div>
       </aside>
       <main>
+        <h2>Somos a C3C</h2>
+        <h4>
+          Um time focado em facilitar as soluções da sua empresa . Desenvolvida
+          por especialistas no mercado salesforce, nossos C's constituem nossa
+          missão.
+        </h4>
         <div class="main-content">
           <h2>{{ context[bullet].name }}</h2>
           <h4>
@@ -148,7 +149,7 @@ export default {
 .first-section-main {
   display: flex;
   width: 90%;
-  height: 400px;
+  min-height: 400px;
   margin: 30px auto;
   background: var(--background);
   border-radius: 12px;
@@ -158,7 +159,6 @@ export default {
 
 .first-section-main aside {
   flex: 0.6;
-  height: 100%;
   background: var(--secundary);
 }
 
@@ -216,9 +216,9 @@ main {
 }
 
 main .main-content h2 {
-  position: absolute;
+  /* position: absolute;
   top: -28px;
-  left: 20px;
+  left: 20px; */
   text-align: left;
   font-weight: 500;
 }
@@ -239,12 +239,13 @@ main .main-content h4 {
 main .main-bullets {
   display: flex;
   margin-left: 30px;
+  margin-bottom: 30px;
 }
 
 main .bullets {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  /* width: 80%; */
 }
 
 main .bullet-option {

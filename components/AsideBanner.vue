@@ -234,4 +234,10 @@ export default {
 .container.light img.dark {
   display: none;
 }
+.container.dark img.dark {
+  display: block !important;
+}
+.container img.dark {
+  display: none;
+}
 </style>

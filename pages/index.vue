@@ -83,7 +83,7 @@ strong.primary {
 
 .home-page {
   overflow: hidden !important;
-  width: 100vw;
+  width: 100%;
 }
 
 @media screen and (max-width: 829px) {

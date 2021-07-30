@@ -3,9 +3,9 @@
     <div class="header">
       <h1>
         Soluções em tecnologia, feitas <wbr />
-        por pessoas reais, para
+        por especialistas, para
         <wbr />
-        necessidades reais
+        necessidades reais da sua empresa
       </h1>
 
       <h4>

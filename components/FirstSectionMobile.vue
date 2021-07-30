@@ -1,13 +1,8 @@
 <template>
   <div class="first-section-container">
-    <div class="first-section-header">
-      <h2>Somos a C3C</h2>
-      <h4>
-        Um time focado em facilitar as soluções da sua empresa . Desenvolvida
-        por especialistas no mercado salesforce, nossos C's constituem nossa
-        missão.
-      </h4>
-    </div>
+    <!-- <div class="first-section-header">
+     
+    </div> -->
     <div class="first-section-main">
       <aside>
         <div class="comand-circles">
@@ -32,6 +27,12 @@
         </div>
       </aside>
       <main>
+        <h2>Somos a C3C</h2>
+        <h4>
+          Um time focado em facilitar as soluções da sua empresa . Desenvolvida
+          por especialistas no mercado salesforce, nossos C's constituem nossa
+          missão.
+        </h4>
         <div class="main-content">
           <h2>{{ context[bullet].name }}</h2>
           <h4>
