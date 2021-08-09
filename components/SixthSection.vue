@@ -107,7 +107,7 @@ export default {};
   min-width: 300px;
   max-width: 320px;
   background: var(--background);
-  margin: 20px;
+  margin: 20px 0;
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 

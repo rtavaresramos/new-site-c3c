@@ -155,6 +155,7 @@ export default {
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 5px;
   overflow: hidden;
+  transition: all ease 0.5s;
 }
 
 .first-section-main aside {
