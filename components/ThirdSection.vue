@@ -5,18 +5,16 @@
     </div>
 
     <div class="solutions-results-container shadow background-white">
-      <div class="solutions-results shadow background-white">
-        <SolutionChartOne />
-      </div>
       <div class="solutions-results-context">
-        <h3>Controle da Organização</h3>
+        <h3>Métricas Gerais</h3>
 
         <h4>
-          Através de um ambiente Salesforce customizado de acordo com o que a
-          sua companhia precisa, você pode ter acesso a diversos gráficos e
-          números que facilitarão o controle organizacional e a tomada de
-          decisão
+          Métricas médias de sucesso do cliente obtidas após a implementação de
+          Salesforce
         </h4>
+      </div>
+      <div class="solutions-results shadow background-white">
+        <SolutionChartOne />
       </div>
     </div>
 
@@ -70,8 +68,8 @@ export default {};
 
 .solutions-results-container {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
   padding: 20px;
   width: 100%;
   min-height: 400px;
@@ -88,7 +86,6 @@ export default {};
 }
 
 .solutions-results {
-  width: 50%;
   border-radius: 8px;
   overflow: hidden;
   min-width: 300px;
@@ -96,7 +93,6 @@ export default {};
 }
 
 .solutions-results-context {
-  width: 50%;
   min-width: 280px;
   margin: 20px auto;
 }

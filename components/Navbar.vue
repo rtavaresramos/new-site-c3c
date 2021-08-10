@@ -19,21 +19,21 @@
       </nuxt-link>
       <div>
         <ul ref="toggleControl" class="toggle-off">
-          <nuxt-link to="/servicos" class="desktop">
+          <nuxt-link to="/#quem-somos" class="desktop">
             <li>Somos a C3C</li>
           </nuxt-link>
-          <nuxt-link to="/servicos" class="mobile">
+          <nuxt-link to="/#quem-somos" class="mobile">
             <li>Somos a C3C</li>
           </nuxt-link>
-          <nuxt-link to="/faq" class="desktop">
+          <nuxt-link to="/#servicos" class="desktop">
             <li>Nossas Soluções</li>
           </nuxt-link>
-          <nuxt-link to="/faq" class="mobile">
+          <nuxt-link to="/#servicos" class="mobile">
             <li>Nossas Soluções</li>
           </nuxt-link>
 
           <li class="bigger">
-            <Button nav text="Saiba Mais" />
+            <Button to="#servicos" nav text="Saiba Mais" />
           </li>
         </ul>
       </div>

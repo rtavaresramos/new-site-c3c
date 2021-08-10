@@ -1,6 +1,6 @@
 <template>
   <div class="button" :class="{ 'button-nav': nav }">
-    <a v-if="nav" :href="to" target="_blank">
+    <a v-if="nav" :href="to">
       {{ text }}
     </a>
     <a v-else-if="link" :href="to" target="_blank">
