@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      theme: null,
+      theme: "light",
     };
   },
   beforeMount() {
@@ -74,6 +74,7 @@ export default {
 .container.dark {
   --light: #f8f8f8;
 
+  --gray-chart: rgba(255, 255, 255, 0.199);
   --gray-light: rgba(255, 255, 255, 0.6);
   --gray-dark: rgba(255, 255, 255, 1);
 
@@ -97,6 +98,7 @@ export default {
 .container.light {
   --light: #f8f8f8;
 
+  --gray-chart: rgba(255, 255, 255, 0.856);
   --gray-light: rgba(0, 0, 0, 0.6);
   --gray-dark: rgba(0, 0, 0, 0.8);
 

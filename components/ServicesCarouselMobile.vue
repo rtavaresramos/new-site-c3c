@@ -207,9 +207,10 @@
 <style scoped>
 h4 {
   font-size: 1rem;
-  color: var(--gray-dark);
+  color: #fff;
   margin-left: 80%;
-  background: var(--light);
+  margin-bottom: 10px;
+  background: var(--primary);
   width: 40px;
   text-align: center;
   border-radius: 4px;
@@ -217,47 +218,68 @@ h4 {
 
 p {
   color: var(--gray-dark);
-  font-size: 1rem;
+  font-size: 3rem;
+}
+
+.item {
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
 }
 
 .phone-label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 210px;
-  margin-top: 4px;
-  height: 290px;
+  width: 80%;
+  margin-top: 30px;
+  height: 250px;
   padding: 20px;
   border-radius: 14px;
-  background: var(--primary);
+  background: var(--background);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 5px;
 }
 
 .phone-label img {
-  width: 55px;
-  margin: 0 auto;
+  height: 80%;
+  margin: 0 auto 14px;
+  border-radius: 5px;
 }
 
 h3 {
-  color: #fff;
-  text-align: center;
+  display: none;
 }
 
-.phone-label a {
-  color: #fff;
-  font-size: 0.8rem;
+.service-explain h3 {
+  display: block;
+  color: var(--gray-dark);
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.service-explain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+}
+
+.service-explain a {
+  color: var(--gray-dark);
+  font-size: 1.2rem;
   font-weight: 600;
 }
-.phone-label p {
+.service-explain p {
   margin-top: 20px;
-  color: #fff;
-  font-size: 0.8rem;
+  color: var(--gray-dark);
+  font-size: 1.2rem;
   font-weight: 300;
-  hyphens: auto;
 }
 
 .circles {
-  position: absolute;
-  bottom: -10px;
+  height: 100%;
   align-items: flex-end;
 }
 
@@ -265,36 +287,36 @@ h3 {
   position: relative;
   min-width: 20px;
   height: 20px;
-  background: var(--primary-disabled);
+  background: var(--primary);
+  filter: brightness(50%);
   border-radius: 50%;
-  margin: 20px 4px -40px;
+  margin: 0 4px;
 }
 
 .circle.active {
-  background: #b77a51;
+  filter: brightness(100%);
+  background: var(--primary);
 }
 
 .carousel-wrapper {
-  min-height: 330px;
-  max-height: 530px;
+  min-height: 80vh;
   padding: 10px 0;
-  height: auto;
+  height: fit-content;
   position: relative;
-  width: auto;
   margin: 0 auto;
 }
-.carousel-services-options-mobile {
+.carousel-services-options {
   position: absolute;
-  top: 14px;
+  top: 0;
   bottom: 0;
-  left: -50px;
+  left: 0;
   right: 0;
-  padding: 25px 50px;
+
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
 .arrow {
-  border: solid rgba(255, 255, 255, 0.5);
+  border: solid var(--primary);
   border-width: 0 14px 14px 0;
   border-radius: 4px;
   display: inline-block;
@@ -328,56 +350,58 @@ h3 {
 }
 
 /*Select every element*/
-[id^="services-options-mobile"] {
+[id^="services-options"] {
   display: none;
 }
 
-.services-options-mobile-1 {
-  margin: 10px;
+.services-options-1 {
   min-width: 280px;
+  max-width: 1368px;
 
   z-index: 2;
   opacity: 1;
 }
 
-.services-options-mobile-2 {
-  margin: 10px;
+.services-options-2 {
   min-width: 280px;
+  max-width: 1368px;
 }
 
-.services-options-mobile-3 {
-  margin: 10px;
+.services-options-3 {
   min-width: 280px;
+  max-width: 1368px;
 }
 
-.services-options-mobile-4 {
-  margin: 10px;
+.services-options-4 {
   min-width: 280px;
+  max-width: 1368px;
+}
+.services-options-5 {
+  min-width: 280px;
+  max-width: 1368px;
 }
 
-.services-options-mobile-5 {
-  margin: 10px;
+.services-options-6 {
   min-width: 280px;
-}
-.services-options-mobile-6 {
-  margin: 10px;
-  min-width: 280px;
+  max-width: 1368px;
 }
 
-*:target ~ .services-options-mobile-1 {
+*:target ~ .services-options-1 {
   opacity: 0;
 }
 
-#services-options-mobile-1:target ~ .services-options-mobile-1 {
+#services-options-1:target ~ .services-options-1 {
   opacity: 1;
+  height: 600px;
 }
 
-#services-options-mobile-2:target ~ .services-options-mobile-2,
-#services-options-mobile-3:target ~ .services-options-mobile-3,
-#services-options-mobile-4:target ~ .services-options-mobile-4,
-#services-options-mobile-5:target ~ .services-options-mobile-5,
-#services-options-mobile-6:target ~ .services-options-mobile-6 {
+#services-options-2:target ~ .services-options-2,
+#services-options-3:target ~ .services-options-3,
+#services-options-4:target ~ .services-options-4,
+#services-options-5:target ~ .services-options-5,
+#services-options-6:target ~ .services-options-6 {
   z-index: 3;
   opacity: 1;
+  height: 600px;
 }
 </style>

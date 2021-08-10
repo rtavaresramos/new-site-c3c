@@ -4,7 +4,7 @@
       <h2>Quais Benefícios Essas Soluções Trazem?</h2>
     </div>
 
-    <div class="solutions-results-container shadow background-white">
+    <div class="solutions-results-container background-white">
       <div class="solutions-results-context">
         <h3>Métricas Gerais</h3>
 
@@ -13,7 +13,7 @@
           Salesforce
         </h4>
       </div>
-      <div class="solutions-results shadow background-white">
+      <div class="solutions-results background-white">
         <SolutionChartOne />
       </div>
     </div>
@@ -79,10 +79,6 @@ export default {};
 
 .background-white {
   background: var(--background);
-}
-
-.shadow {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .solutions-results {
