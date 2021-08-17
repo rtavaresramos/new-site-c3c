@@ -4,12 +4,12 @@
       <h2>Quem Usa Nossas Soluções e Serviços</h2>
     </div>
 
-    <div class="all-companies">
+    <div v-if="customer.length > 0" class="all-companies">
       <img
         v-for="item in customers"
         :key="item.id"
         :src="item.imageUrl"
-        alt=""
+        :alt="image.name"
         srcset=""
       />
     </div>

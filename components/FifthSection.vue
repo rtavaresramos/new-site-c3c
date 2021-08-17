@@ -13,7 +13,7 @@
     </div>
 
     <div class="shadow-comments">
-      <div class="all-comments">
+      <div v-if="coments.length > 0" class="all-comments">
         <div v-for="item in coments" :key="item.id" class="comment-container">
           <div class="comment-header">
             <div class="profile-img">

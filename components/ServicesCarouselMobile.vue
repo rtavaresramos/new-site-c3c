@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel-wrapper">
+  <div v-if="techs.length > 0" class="carousel-wrapper">
     <span
       v-for="(item, i) in techs"
       :key="item.id"
