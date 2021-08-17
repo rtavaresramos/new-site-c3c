@@ -5,17 +5,44 @@
     </div>
 
     <div class="all-companies">
-      <img src="~assets/svg/company-1.svg" alt="" srcset="" />
-      <img src="~assets/svg/company-2.svg" alt="" srcset="" />
-      <img src="~assets/svg/company-3.svg" alt="" srcset="" />
-      <img src="~assets/svg/company-4.svg" alt="" srcset="" />
+      <img
+        v-for="item in customers"
+        :key="item.id"
+        :src="item.imageUrl"
+        alt=""
+        srcset=""
+      />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import * as firebase from "firebase/app";
+export default {
+  data() {
+    return {
+      customers: [],
+    };
+  },
+  mounted() {
+    this.getImages();
+  },
+  methods: {
+    getImages() {
+      this.customers = [];
+      const ref = firebase.database().ref("site/customers");
+      ref.on("value", (data) => {
+        const values = data.val();
+        this.customers = Object.keys(values).map((i) => values[i]);
+      });
+    },
+    checkClick(evt) {
+      this.$emit("customerForDelete", evt);
+    },
+  },
+};
 </script>
+
 
 <style scoped>
 .fourth-section-container {

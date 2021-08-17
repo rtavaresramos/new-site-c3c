@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="~assets/svg/logo.svg" alt="Logo C3C" srcset="" />
+    <img src="~assets/img/logo-c3c.png" alt="Logo C3C" srcset="" />
   </div>
 </template>
 

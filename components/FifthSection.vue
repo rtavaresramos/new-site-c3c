@@ -14,25 +14,19 @@
 
     <div class="shadow-comments">
       <div class="all-comments">
-        <div v-for="i in 8" :key="i" class="comment-container">
+        <div v-for="item in coments" :key="item.id" class="comment-container">
           <div class="comment-header">
             <div class="profile-img">
-              <img
-                src="https://avatars.githubusercontent.com/u/22183253?v=4"
-                alt=""
-                srcset=""
-              />
+              <img :src="item.imageUrl" alt="" srcset="" />
             </div>
             <div class="profile-info">
-              <h3 class="name">Rodrigo Tavares</h3>
-              <h4 class="mention-contact">@rtavaresramos</h4>
+              <h3 class="name">{{ item.name }}</h3>
+              <h4 class="mention-contact">@{{ item.social }}</h4>
             </div>
           </div>
           <div class="comment-content">
             <h4 class="content">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptate illum et mollitia beatae consequatur corrupti? Ad
-              officia dignissimos porro, neque optio amet esse.
+              {{ item.description }}
             </h4>
           </div>
         </div>
@@ -40,10 +34,33 @@
     </div>
   </div>
 </template>
-
 <script>
-export default {};
+import * as firebase from "firebase/app";
+export default {
+  data() {
+    return {
+      coments: [],
+    };
+  },
+  mounted() {
+    this.getImages();
+  },
+  methods: {
+    getImages() {
+      this.coments = [];
+      const ref = firebase.database().ref("site/coments");
+      ref.on("value", (data) => {
+        const values = data.val();
+        this.coments = Object.keys(values).map((i) => values[i]);
+      });
+    },
+    checkClick(evt) {
+      this.$emit("comentForDelete", evt);
+    },
+  },
+};
 </script>
+
 
 <style scoped>
 .fifth-section-container {
