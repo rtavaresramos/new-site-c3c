@@ -1,13 +1,13 @@
 <template>
-  <div v-if="techs.length > 0" class="carousel-wrapper">
+  <div class="carousel-wrapper">
     <span
       v-for="(item, i) in techs"
-      :key="item.id"
+      :key="`span-key-${item.id}`"
       :id="`services-options-${i + 1}`"
     ></span>
     <div
       v-for="(item, i) in techs"
-      :key="item.id"
+      :key="`carousel-key-${item.id}`"
       :class="`carousel-services-options services-options-${
         i + 1
       } d-flex flex-col align-center justify-center`"
