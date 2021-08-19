@@ -8,66 +8,78 @@
 
         <div class="follow__container--links">
           <a
+            v-if="github.active"
             class="text-white"
             target="_blank"
-            href="https://github.com/c3csoftware"
+            :href="github.link"
             ><i class="fab fa-github fa-3x"></i
           ></a>
           <a
+            v-if="facebook.active"
             class="text-white"
             target="_blank"
-            href="https://www.facebook.com/rodrigokxd99"
+            :href="facebook.link"
             ><i class="fab fa-facebook-square fa-3x"></i
           ></a>
           <a
+            v-if="instagram.active"
             class="text-white"
             target="_blank"
-            href="https://www.instagram.com/c3csoftware/"
+            :href="instagram.link"
             ><i class="fab fa-instagram fa-3x"></i
           ></a>
           <a
+            v-if="linkedin.active"
             class="text-white"
             target="_blank"
-            href="https://www.linkedin.com/in/c3csoftware95/"
+            :href="linkedin.link"
             ><i class="fab fa-linkedin fa-3x"></i
           ></a>
           <a
+            v-if="twitter.active"
             class="text-white"
             target="_blank"
-            href="https://twitter.com/c3csoftware"
+            :href="twitter.link"
             ><i class="fab fa-twitter-square fa-3x"></i
           ></a>
         </div>
       </div>
 
       <div class="form__container">
-        <h1>... ou Solicite o um contato</h1>
+        <h1 v-if="!isSubmitted">... ou Solicite o um contato</h1>
+        <h1 v-if="isSubmitted">
+          Formulário enviado com sucesso! <br />Aguarde o nosso contato.
+        </h1>
         <div class="form__group">
           <form
+            v-if="!isSubmitted"
             id="contact-form"
             name="contact"
             method="POST"
-            data-netlify="true"
+            @submit.prevent="submitForm"
           >
             <input
+              v-model="form.name"
               type="text"
               name="name"
               placeholder="Informe seu nome"
               required
             />
             <input
+              v-model="form.email"
               type="email"
               name="e-mail"
               placeholder="Informe seu e-mail"
               required
             />
             <textarea
+              v-model="form.message"
               name="message"
               placeholder="Informe sua mensagem"
               required
             ></textarea>
 
-            <button class="">Enviar</button>
+            <button type="submit">Enviar</button>
           </form>
         </div>
       </div>
@@ -76,7 +88,69 @@
 </template>
 
 <script>
-export default {};
+import * as firebase from "firebase/app";
+export default {
+  data() {
+    return {
+      form: {
+        name: "",
+        email: "",
+        message: "",
+      },
+      isSubmitted: false,
+      github: {
+        active: null,
+        link: "",
+      },
+      facebook: {
+        active: null,
+        link: "",
+      },
+      instagram: {
+        active: null,
+        link: "",
+      },
+      linkedin: {
+        active: null,
+        link: "",
+      },
+      twitter: {
+        active: null,
+        link: "",
+      },
+    };
+  },
+  mounted() {
+    this.getSocial();
+  },
+  methods: {
+    getSocial() {
+      const ref = firebase.database().ref("site/social-section");
+      ref.on("value", (data) => {
+        const values = data.val();
+        // arr = Object.keys(values).map((i) => values[i]);
+        // console.log("arr", arr);
+        this.github = values["github"];
+        this.facebook = values["facebook"];
+        this.instagram = values["instagram"];
+        this.linkedin = values["linkedin"];
+        this.twitter = values["twitter"];
+      });
+    },
+    async submitForm() {
+      try {
+        await this.$axios.$post("", {
+          name: this.form.name,
+          email: this.form.email,
+          msg: this.form.message,
+        });
+        this.isSubmitted = true;
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  },
+};
 </script>
 
 <style  scoped>
@@ -131,6 +205,8 @@ form input:-ms-input-placeholder {
 input,
 textarea,
 button {
+  font-size: 14px;
+  font-weight: 600;
   border-radius: 4px;
   border: unset;
   appearance: none;
@@ -139,7 +215,7 @@ button {
   margin: 6px 0;
   padding: 12px;
   max-width: 700px;
-  color: var(--primary);
+  color: var(--gray-light);
   background: var(--background);
 }
 .form__group {

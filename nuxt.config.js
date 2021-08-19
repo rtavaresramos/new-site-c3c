@@ -35,8 +35,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    ['@nuxtjs/axios', { baseURL: '/api/contact' }]
   ],
 
+  serverMiddleware: [
+    '~/api/contact'
+  ],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

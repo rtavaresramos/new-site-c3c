@@ -8,25 +8,52 @@
     <ThirdSection />
     <FourthSection />
     <FifthSection />
-    <SixthSection />
-    <SeventhSection />
+    <SixthSection v-if="sixthSectionControll" />
+    <SeventhSection v-if="seventhSectionControll" />
     <Footer />
   </div>
 </template>
 <script>
+import * as firebase from "firebase/app";
 export default {
   data() {
     return {
       teste: null,
+      sixthSectionControll: null,
+      seventhSectionControll: null,
     };
   },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
-  },
+
   beforeDestroy() {
     window.removeEventListener("scroll", this.onScroll);
   },
+
+  mounted() {
+    this.getSixthSectionControll();
+    this.getSeventhSectionControll();
+    window.addEventListener("scroll", this.onScroll);
+  },
+
   methods: {
+    getSixthSectionControll() {
+      const ref = firebase.database().ref("site/blog-section/controll");
+      ref.on("value", (data) => {
+        const value = data.val();
+        this.sixthSectionControll = value.active;
+        console.log(value.active);
+      });
+    },
+    getSeventhSectionControll() {
+      const ref = firebase
+        .database()
+        .ref("site/call-to-action-section/controll");
+      ref.on("value", (data) => {
+        const value = data.val();
+        this.seventhSectionControll = value.active;
+        console.log(value.active);
+      });
+    },
+
     onScroll(e) {
       this.teste = window.top.scrollY;
     },
