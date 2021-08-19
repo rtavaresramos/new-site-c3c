@@ -47,7 +47,7 @@ const sendMail = (name, email, msg) => {
     })
     transporter.sendMail({
         from: email,
-        to: 'rtavareskxd99@gmail.com',
+        to: 'poyegad304@alltekia.com',
         subject: `Novo contato recebido pelo site - ${name}`,
         text: msg
     })

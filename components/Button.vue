@@ -21,7 +21,7 @@ export default {
     },
     to: {
       type: String,
-      default: "/#",
+      default: "/#contact",
     },
     nav: {
       type: Boolean,
