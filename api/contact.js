@@ -41,14 +41,20 @@ const validateAndSanitize = (key, value) => {
 
 const sendMail = (name, email, msg) => {
     let transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'rtavareskxd99@gmail.com',
+            pass: 'Kxd99123'
+        },
         port: 465,
+        secure: true,
         sendmail: true,
         newline: 'unix',
         path: '/usr/sbin/sendmail'
     })
     transporter.sendMail({
         from: email,
-        to: 'rodrigo.tavares@c3csoftware.com.br',
+        to: 'rtavareskxd99@gmail.com',
         subject: `Novo contato recebido pelo site - ${name}`,
         text: msg
     })

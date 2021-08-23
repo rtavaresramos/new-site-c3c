@@ -33,7 +33,7 @@
           </nuxt-link>
 
           <li class="bigger">
-            <Button to="#servicos" nav text="Saiba Mais" />
+            <Button to="#get-in-touch" nav text="Saiba Mais" />
           </li>
         </ul>
       </div>

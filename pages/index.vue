@@ -4,13 +4,13 @@
     <Header />
     <FirstSection class="desktop" />
     <FirstSectionMobile class="mobile" />
-    <SecondSection />
+    <SecondSection id="servicos" />
     <ThirdSection />
     <FourthSection />
     <FifthSection />
     <SixthSection v-if="sixthSectionControll" />
     <SeventhSection v-if="seventhSectionControll" />
-    <Footer />
+    <Footer id="get-in-touch" />
   </div>
 </template>
 <script>
