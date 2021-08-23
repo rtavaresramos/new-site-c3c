@@ -3,7 +3,7 @@
     <a v-if="nav" :href="to">
       {{ text }}
     </a>
-    <a v-else-if="link" :href="to" target="_blank">
+    <a v-else-if="link" :href="to">
       {{ text }}
     </a>
     <nuxt-link v-else :to="to">
