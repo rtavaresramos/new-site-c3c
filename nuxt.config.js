@@ -8,7 +8,17 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Desenvolvimento de Softwares e Pessoas. Utilizamos padrões de desenvolvimento para entregar soluções estáveis, escaláveis e de fácil manutenção.' },
+      {
+        hid: 'og:image:secure_url',
+        property: 'og:image:secure_url',
+        content: '~assets/img/logo-c3c.png'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: "~assets/img/logo-c3c.png"
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
