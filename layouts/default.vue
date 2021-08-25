@@ -22,12 +22,14 @@ export default {
         {
           hid: "og:image:secure_url",
           property: "og:image:secure_url",
-          content: "~assets/img/logo-c3c.png",
+          content:
+            "https://firebasestorage.googleapis.com/v0/b/site-c3c.appspot.com/o/site%2Ffavicon.ico?alt=media&token=2682f4d9-b33f-4947-bd55-d68dd6292ca4",
         },
         {
           hid: "og:image",
           property: "og:image",
-          content: "~assets/img/logo-c3c.png",
+          content:
+            "https://firebasestorage.googleapis.com/v0/b/site-c3c.appspot.com/o/site%2Ffavicon.ico?alt=media&token=2682f4d9-b33f-4947-bd55-d68dd6292ca4",
         },
         {
           hid: "og:title",
