@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'C3C Software',
+    title: 'C3C Software: Desenvolvimento de Softwares e Pessoas',
     htmlAttrs: {
       lang: 'en'
     },
@@ -45,8 +45,17 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    ['@nuxtjs/axios', { baseURL: '/api/contact' }]
+    ['@nuxtjs/axios', { baseURL: '/api/contact' }],
+    'nuxt-seo'
   ],
+  seo: {
+    // Module options
+    baseUrl: 'https://c3csoftware.com.br',
+    name: 'C3C Software: Desenvolvimento de Softwares e Pessoas',
+    title: 'C3C Software: Desenvolvimento de Softwares e Pessoas',
+    description: 'Desenvolvimento de Softwares e Pessoas. Utilizamos padrões de desenvolvimento para entregar soluções estáveis, escaláveis e de fácil manutenção.',
+    keywords: ['Consultoria', 'Capacitação', 'Desenvolvimento Salesforce']
+  },
 
   serverMiddleware: [
     '~/api/contact'

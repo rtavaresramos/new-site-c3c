@@ -7,21 +7,71 @@
 
 <script>
 export default {
-  head: {
-    title: "C3C Software",
-    link: [
-      {
-        rel: "stylesheet",
-        href: "https://pro.fontawesome.com/releases/v5.10.0/css/all.css",
-        integrity:
-          "sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p",
-        crossorigin: "anonymous",
-      },
-    ],
+  head() {
+    return {
+      title: "C3C Software: Desenvolvimento de Softwares e Pessoas",
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Desenvolvimento de Softwares e Pessoas. Utilizamos padrões de desenvolvimento para entregar soluções estáveis, escaláveis e de fácil manutenção.",
+        },
+        {
+          hid: "og:image:secure_url",
+          property: "og:image:secure_url",
+          content: "~assets/img/logo-c3c.png",
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: "~assets/img/logo-c3c.png",
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.title,
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.description,
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: "~assets/img/logo-c3c.png",
+        },
+        {
+          hid: "og:image:secure_url",
+          property: "og:image:secure_url",
+          content: "~assets/img/logo-c3c.png",
+        },
+        {
+          hid: "og:image:alt",
+          property: "og:image:alt",
+          content: this.title,
+        },
+      ],
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://pro.fontawesome.com/releases/v5.10.0/css/all.css",
+          integrity:
+            "sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p",
+          crossorigin: "anonymous",
+        },
+      ],
+    };
   },
   data() {
     return {
       theme: "light",
+      title: "C3C Software: Desenvolvimento de Softwares e Pessoas",
+      description:
+        "Desenvolvimento de Softwares e Pessoas. Utilizamos padrões de desenvolvimento para entregar soluções estáveis, escaláveis e de fácil manutenção.",
     };
   },
   beforeMount() {
