@@ -55,7 +55,6 @@
             v-if="!isSubmitted"
             id="contact-form"
             name="contact"
-            method="POST"
             @submit.prevent="submitForm"
           >
             <input
@@ -145,6 +144,7 @@ export default {
           msg: this.form.message,
         });
         this.isSubmitted = true;
+        await new Promise((resolve) => setTimeout(resolve, 2500));
       } catch (e) {
         console.error(e);
       }
@@ -217,6 +217,10 @@ button {
   max-width: 700px;
   color: var(--gray-light);
   background: var(--background);
+}
+
+button {
+  color: var(--primary) !important;
 }
 .form__group {
   width: 100%;
