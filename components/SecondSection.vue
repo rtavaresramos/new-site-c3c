@@ -2,7 +2,6 @@
   <div class="second-section-container">
     <div class="second-section-header">
       <h2>Temos a Solução Que Seu Negócio Precisa</h2>
-      <!-- <ServicesCarousel /> -->
       <ServicesCarouselMobile />
     </div>
   </div>
